@@ -13,7 +13,7 @@ npm install holiday-jp
 ```javascript
 var holiday = require('holiday-jp')
 
-// find holidays between 3/6/2014 ~ 30/8/2014
+// find holidays between 3/6/2014 ~ 30/9/2014
 // returns Array of Object (see below for their properties)
 holiday.between(new Date(2014, 5, 3), new Date(2014, 8, 30))
 
