@@ -1,0 +1,27 @@
+{
+  "name": "holiday-jp",
+  "version": "0.1.0",
+  "description": "Japanese holidays, JavaScript porting of Ruby holiday_jp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hitsujiwool/node-holiday-jp"
+  },
+  "keywords": [
+    "calendar",
+    "japanese",
+    "holiday"
+  ],
+  "author": "Ryo Murayama <utatanenohibi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hitsujiwool/node-holiday-jp/issues"
+  },
+  "homepage": "https://github.com/hitsujiwool/node-holiday-jp",
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
