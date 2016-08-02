@@ -1,10 +1,5 @@
-
-var holidays = require('./lib/holidays');
+var holidays = require('./holidays.json');
 var holiday = require('./lib/holiday');
-var index = holidays.reduce(function(acc, item) {
-  acc[item[0]] = holiday(beginningOfDay(new Date(item[0])), item[1]);
-  return acc;
-}, {});
 
 function format(date) {
   return date.getFullYear() + '-' + pad((date.getMonth() + 1)) + '-' + pad(date.getDate());
@@ -29,27 +24,29 @@ module.exports = {
    * @return {Array[Object]}
    * @api public
    */
-  
+
   between: function(start, end) {
     var date;
     var res = [];
-    for (var key in index) {
-      date = index[key].date;
+    for (var key in holidays) {
+      date = beginningOfDay(new Date(key));
       // given `start` and `end` Date object are both normalized to beginning of the day
-      if (beginningOfDay(start) <= date && date <= beginningOfDay(end)) res.push(index[key]);
+      if (beginningOfDay(start) <= date && date <= beginningOfDay(end)) {
+        res.push(holiday(date, holidays[key]));
+      }
     }
     return res;
   },
 
   /**
    * Return whether given date is holiday or not.
-   * 
+   *
    * @param {Date} date
    * @return {Boolean}
    * @api public
    */
-  
+
   isHoliday: function(date) {
-    return format(date) in index;
+    return format(date) in holidays;
   }
 };
