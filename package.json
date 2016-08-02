@@ -1,6 +1,6 @@
 {
   "name": "holiday-jp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Japanese holidays, JavaScript porting of Ruby holiday_jp",
   "main": "index.js",
   "scripts": {
